@@ -4,6 +4,7 @@ import { Button } from "@material-ui/core";
 import { Edit } from "@material-ui/icons";
 
 const Confirm = props => {
+  const { formData, prev, next, changePage } = props;
   const {
     firstName,
     lastName,
@@ -12,13 +13,11 @@ const Confirm = props => {
     address,
     city,
     state,
-    zip,
-    prev,
-    next,
-    changePage
-  } = props;
+    zip
+  } = formData;
   return (
     <section className="simpleForm">
+      <h3>Confirm your details</h3>
       <section className="user-data">
         <h6>First Name</h6>
         <p>{firstName}</p>
@@ -41,31 +40,33 @@ const Confirm = props => {
         <p>{zip}</p>
         <Edit className="edit" onClick={() => changePage(2)} />
       </section>
-      <Button
-        variant="outlined"
-        onClick={prev}
-        color="default"
-        size="large"
-        className="control-btn"
-      >
-        Back
-      </Button>
-      <Button
-        variant="outlined"
-        onClick={next}
-        color="primary"
-        size="large"
-        className="control-btn"
-      >
-        Continue
-      </Button>
+      <div>
+        <Button
+          variant="outlined"
+          onClick={prev}
+          color="default"
+          size="large"
+          className="control-btn"
+        >
+          Back
+        </Button>
+        <Button
+          variant="outlined"
+          onClick={next}
+          color="primary"
+          size="large"
+          className="control-btn"
+        >
+          Continue
+        </Button>
+      </div>
     </section>
   );
 };
 
 Confirm.propTypes = {
   next: PropTypes.func.isRequired,
-  handleInputChange: PropTypes.func.isRequired,
+  prev: PropTypes.func.isRequired,
   formData: PropTypes.shape({
     firstName: PropTypes.string,
     lastName: PropTypes.string,

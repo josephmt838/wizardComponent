@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { TextField, Button, Switch, FormControlLabel } from "@material-ui/core";
+import { TextField, Button } from "@material-ui/core";
 
 const PersonalData = props => {
-  const { next, handleInputChange, formData, toggleSwitchChange, prev } = props;
-  const { subscribe, address, city, state, zip } = formData;
+  const { next, handleInputChange, formData, prev } = props;
+  const { address, city, state, zip } = formData;
   return (
     <section className="simpleForm">
       <h3>Personal Information</h3>
@@ -35,18 +35,6 @@ const PersonalData = props => {
         value={zip}
         onChange={handleInputChange}
         variant="outlined"
-      />
-      <FormControlLabel
-        label="Subscribe"
-        labelPlacement="start"
-        control={
-          <Switch
-            value={subscribe}
-            color="primary"
-            onChange={toggleSwitchChange}
-            name="subscribe"
-          />
-        }
       />
       <div>
         <Button
