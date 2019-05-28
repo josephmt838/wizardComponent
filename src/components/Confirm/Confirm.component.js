@@ -75,7 +75,7 @@ Confirm.propTypes = {
     address: PropTypes.string,
     city: PropTypes.string,
     state: PropTypes.string,
-    zip: PropTypes.number
+    zip: PropTypes.string
   }),
   changePage: PropTypes.func.isRequired
 };

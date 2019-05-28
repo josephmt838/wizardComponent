@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import PropTypes from "prop-types";
 // import components here
 import UserDetails from "../UserDetails";
 import Success from "../Success";
@@ -30,6 +30,7 @@ export default class Wizard extends Component {
     this.setState({ [e.target.name]: !this.state[e.target.name] });
   changePage = page => this.setState({ step: page });
   render() {
+    const { loginLink } = this.props;
     const {
       step,
       firstName,
@@ -89,7 +90,7 @@ export default class Wizard extends Component {
           />
         );
       case 4:
-        return <Success />;
+        return <Success loginLink={loginLink} />;
       default:
         return (
           <UserDetails
@@ -101,3 +102,11 @@ export default class Wizard extends Component {
     }
   }
 }
+
+Wizard.propTypes = {
+  loginLink: PropTypes.string
+};
+
+Wizard.defaultProps = {
+  loginLink: "/login"
+};

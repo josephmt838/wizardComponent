@@ -65,7 +65,7 @@ UserDetails.propTypes = {
     occupation: PropTypes.string,
     city: PropTypes.string,
     state: PropTypes.string,
-    zip: PropTypes.number
+    zip: PropTypes.string
   })
 };
 

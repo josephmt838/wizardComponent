@@ -71,7 +71,7 @@ PersonalData.propTypes = {
     address: PropTypes.string,
     city: PropTypes.string,
     state: PropTypes.string,
-    zip: PropTypes.number,
+    zip: PropTypes.string,
     subscribe: PropTypes.bool
   }),
   toggleSwitchChange: PropTypes.func.isRequired
